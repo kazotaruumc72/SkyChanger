@@ -30,10 +30,10 @@ You can find more extensive details on the [wiki](https://github.com/dscalzi/Sky
 
 If you would like to contribute to SkyChanger, feel free to submit a pull request. The project does not use a specific code style, however please keep to the conventions used throughout the code.
 
-You can build SkyChanger using [Gradle](https://gradle.org/). Clone the repository and run the following command.
+You can build SkyChanger using [Maven](https://maven.apache.org/). Clone the repository and run the following command.
 
 ```shell
-$ gradlew build
+$ mvn clean package
 ```
 
 ---

@@ -9,11 +9,10 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-      - run: ./gradlew build
+      - name: Build with Maven
+        run: mvn -B clean package
       - uses: actions/upload-artifact@v3
         with:
           name: Package
           path: |
-            **/skychanger-bukkit/build/libs
+            **/skychanger-bukkit/target/*.jar

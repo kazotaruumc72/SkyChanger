@@ -1,0 +1,72 @@
+name: SkyChanger
+version: ${project.version}
+description: Change the color of your personal sky.
+website: https://github.com/dscalzi/skychanger
+author: Daniel Scalzi (TheKraken7)
+main: com.dscalzi.skychanger.bukkit.SkyChangerPlugin
+api-version: '1.13'
+
+commands:
+  skychanger:
+    description: Main plugin command
+
+permissions:
+  skychanger.*:
+    description: Access to all SkyChanger commands.
+    children:
+      - skychanger.changesky.*
+      - skychanger.freeze.*
+      - skychanger.bypasslimit
+      - skychanger.reload
+  skychanger.changesky.*:
+    description: Access to every part of the main SkyChanger command.
+    children:
+      - skychanger.changesky.self
+      - skychanger.changesky.others
+      - skychanger.changesky.radius.*
+      - skychanger.changesky.world.*
+      - skychanger.changesky.all
+  skychanger.changesky.self:
+    description: Access to change your personal sky color.
+    default: op
+  skychanger.changesky.others:
+    description: Access to change the sky color for a specific player.
+    default: op
+  skychanger.changesky.radius.*:
+    description: Access to change the sky color for players within a radius.
+    default: op
+  skychanger.changesky.world.*:
+    description: Access to change the sky color of a specific world.
+    default: op
+  skychanger.changesky.all:
+    description: Access to change the sky color of all online players.
+    default: op
+  skychanger.freeze.*:
+    description: Access to every part of the SkyChanger freeze and unfreeze commands.
+    children:
+      - skychanger.freeze.self
+      - skychanger.freeze.others
+      - skychanger.freeze.radius.*
+      - skychanger.freeze.world.*
+      - skychanger.freeze.all
+  skychanger.freeze.self:
+    description: Access to freeze/unfreeze yourself.
+    default: op
+  skychanger.freeze.others:
+    description: Access to freeze/unfreeze a specific person.
+    default: op
+  skychanger.freeze.radius.*:
+    description: Access to freeze/unfreeze a players within a radius.
+    default: op
+  skychanger.freeze.world.*:
+    description: Access to freeze/unfreeze a specific world.
+    default: op
+  skychanger.freeze.all:
+    description: Access to freeze/unfreeze all online players.
+    default: op
+  skychanger.bypasslimit:
+    description: Bypass the packet range limits set in the config.yml.
+    default: op
+  skychanger.reload:
+    description: Access to reload the configuration.
+    default: op

@@ -1,4 +1,0 @@
-rootProject.name = 'skychanger'
-include 'skychanger-bukkit'
-include 'skychanger-core'
-

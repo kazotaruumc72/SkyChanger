@@ -1,14 +1,15 @@
-# Gradle
+# Maven
+# -----
+/target/
+*/target/
+dependency-reduced-pom.xml
+
+# Gradle (legacy)
 # -----
 /.gradle
 /build
 /buildSrc/build
 */build
-
-# Maven
-# -----
-/target/
-dependency-reduced-pom.xml
 
 # IDEA
 # ----
