@@ -1,4 +1,4 @@
 rootProject.name = 'skychanger'
-include 'skychanger-bukkit', 'skychanger-sponge'
+include 'skychanger-bukkit'
 include 'skychanger-core'
 

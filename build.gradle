@@ -32,18 +32,9 @@ subprojects {
 
     def major = '5'
     def minor = '0'
-    def spongeRevision = '1'
     def bukkitRevision = '1'
 
-    def rev
-
-    if (project.name.endsWith('sponge')) {
-        rev = spongeRevision
-    } else if (project.name.endsWith('bukkit')) {
-        rev = bukkitRevision
-    } else {
-        rev = spongeRevision.toInteger() > bukkitRevision.toInteger() ? spongeRevision : bukkitRevision
-    }
+    def rev = bukkitRevision
 
     version = "${major}.${minor}.${rev}"
     

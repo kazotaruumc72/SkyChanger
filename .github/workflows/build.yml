@@ -17,4 +17,3 @@ jobs:
           name: Package
           path: |
             **/skychanger-bukkit/build/libs
-            **/skychanger-sponge/build/libs

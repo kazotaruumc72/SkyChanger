@@ -2,7 +2,7 @@
 
 [![Builds](https://github.com/dscalzi/SkyChanger/actions/workflows/build.yml/badge.svg)](https://github.com/dscalzi/SkyChanger/actions/workflows/build.yml) [![](https://pluginbadges.glitch.me/api/v1/dl/Downloads-limegreen.svg?bukkit=skychanger&spigot=skychanger.37524&ore=skychanger&github=dscalzi/SkyChanger&style=flat)](https://github.com/dscalzi/PluginBadges) [![](https://img.shields.io/github/license/dscalzi/SkyChanger.svg)](https://github.com/dscalzi/SkyChanger/blob/master/LICENSE.txt) ![](https://img.shields.io/badge/Spigot/Paper-1.8.x--1.21.x-orange.svg) [![](https://discordapp.com/api/guilds/211524927831015424/widget.png)](https://discordapp.com/invite/Fcrh6PT)
 
-SkyChanger is a light-weight plugin for Spigot, Paper and Sponge. The main function of this plugin is to change the color of the sky for yourself, a specific player, a specific world, or everyone. This plugin functions by sending packets with a specified value to the target player(s).
+SkyChanger is a light-weight plugin for Spigot and Paper. The main function of this plugin is to change the color of the sky for yourself, a specific player, a specific world, or everyone. This plugin functions by sending packets with a specified value to the target player(s).
 
 *Like the project? Leave a ⭐ on the repository!*
 
@@ -58,8 +58,6 @@ See https://docs.github.com/articles/configuring-gradle-for-use-with-github-pack
 dependencies {
     // For Bukkit
     implementation 'com.dscalzi:skychanger-bukkit:VERSION'
-    // For Sponge
-    implementation 'com.dscalzi:skychanger-sponge:VERSION'
 }
 ```
 
@@ -72,13 +70,6 @@ See https://docs.github.com/articles/configuring-apache-maven-for-use-with-githu
 <dependency>
   <groupId>com.dscalzi</groupId>
   <artifactId>skychanger-bukkit</artifactId>
-  <version>VERSION</version>
-</dependency>
-
-<!-- For Sponge -->
-<dependency>
-  <groupId>com.dscalzi</groupId>
-  <artifactId>skychanger-sponge</artifactId>
   <version>VERSION</version>
 </dependency>
 ```
@@ -136,5 +127,4 @@ public void skychangerTests(Player player) {
 
 * [Spigot Resource Page](https://www.spigotmc.org/resources/skychanger.37524/)
 * [Dev Bukkit Page](https://dev.bukkit.org/projects/skychanger)
-* [Sponge Ore Page](https://ore.spongepowered.org/TheKraken7/SkyChanger)
 * [Suggest Features or Report Bugs](https://github.com/dscalzi/SkyChanger/issues)
