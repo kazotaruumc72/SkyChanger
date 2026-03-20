@@ -76,26 +76,26 @@ public class MessageManager {
 
     private void loadLanguage() {
         String l = plugin.getConfigManager().getLanguage();
-        try (InputStream utf8in = plugin.getClass().getResourceAsStream("/lang/Messages_" + l + ".properties");
-             Reader reader = new InputStreamReader(utf8in, StandardCharsets.UTF_8)) {
+        InputStream utf8in = plugin.getClass().getResourceAsStream("/lang/Messages_" + l + ".properties");
+        if (utf8in == null) {
+            severe("Could not find language file for " + l + ". Defaulting to en_US (English).");
+            utf8in = plugin.getClass().getResourceAsStream("/lang/Messages_en_US.properties");
+            if (utf8in == null) {
+                severe("Fatal error, no valid language file found. This may be due to a server"
+                        + " reload or an internal error. Please restart the server. Shutting down..");
+                plugin.disableSelf();
+                return;
+            }
+            l = "en_US";
+        }
+        try (Reader reader = new InputStreamReader(utf8in, StandardCharsets.UTF_8)) {
             props = new Properties();
             props.load(reader);
             lang = l;
-        } catch (NullPointerException e) {
-            severe("Could not find language file for " + l + ". Defaulting to en_US (English).");
-            try (InputStream utf8in = plugin.getClass().getResourceAsStream("/lang/Messages_en_US.properties");
-                 Reader reader = new InputStreamReader(utf8in, StandardCharsets.UTF_8)) {
-                props = new Properties();
-                props.load(reader);
-                lang = "en_US";
-            } catch (IOException | NullPointerException e1) {
-                severe("Fatal error, no valid language file found. This may be due to a server"
-                        + " reload or an internal error. Please restart the server. Shutting down..");
-                e1.printStackTrace();
-                plugin.disableSelf();
-            }
         } catch (IOException e) {
+            severe("Error loading language file for " + l + ".");
             e.printStackTrace();
+            plugin.disableSelf();
         }
     }
 
